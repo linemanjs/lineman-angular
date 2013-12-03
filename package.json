@@ -11,6 +11,7 @@
     "type": "git",
     "url": "git://github.com/testdouble/lineman-angular.git"
   },
+  "main": "main.js",
   "dependencies": {
     "grunt-angular-templates": "0.3.8",
     "grunt-ngmin": "~0.0.3",
