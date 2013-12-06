@@ -29,9 +29,5 @@
       "type": "MIT",
       "url": "http://mit-license.org"
     }
-  ],
-  "engines": {
-    "node": "~>0.10.5",
-    "npm": "~>1.2.18"
-  }
+  ]
 }
