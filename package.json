@@ -1,7 +1,7 @@
 {
   "name": "lineman-angular",
   "title": "An Angular.js plugin for Lineman",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "homepage": "https://github.com/testdouble/lineman-angular",
   "author": {
     "name": "Justin Searls",
