@@ -24,3 +24,6 @@ module.exports = (lineman) ->
   files:
     ngtemplates:
       dest: "generated/angular/template-cache.js"
+
+    template:
+      generated: "<%= files.ngtemplates.dest %>"
