@@ -2,14 +2,14 @@
   "name": "lineman-angular",
   "title": "An Angular.js plugin for Lineman",
   "version": "0.1.1",
-  "homepage": "https://github.com/testdouble/lineman-angular",
+  "homepage": "https://github.com/linemanjs/lineman-angular",
   "author": {
     "name": "Justin Searls",
     "company": "Test Double"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/testdouble/lineman-angular.git"
+    "url": "git://github.com/linemanjs/lineman-angular.git"
   },
   "main": "main.js",
   "dependencies": {
