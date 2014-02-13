@@ -13,7 +13,7 @@
   },
   "main": "main.js",
   "dependencies": {
-    "grunt-angular-templates": "~0.5.1",
+    "grunt-angular-templates": "~0.3.8",
     "grunt-ngmin": "~0.0.3",
     "coffee-script": "~1.6.3",
     "underscore": "~1.5.2"
