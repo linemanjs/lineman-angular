@@ -1,15 +1,18 @@
 {
   "name": "lineman-angular",
-  "title": "An Angular.js plugin for Lineman",
+  "description": "An Angular.js plugin for Lineman",
   "version": "0.2.0",
   "homepage": "https://github.com/linemanjs/lineman-angular",
   "author": {
     "name": "Justin Searls",
-    "company": "Test Double"
+    "email": "justin@testdouble.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/linemanjs/lineman-angular.git"
+    "url": "https://github.com/linemanjs/lineman-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/linemanjs/lineman-angular/issues"
   },
   "dependencies": {
     "grunt-angular-templates": "~0.3.8",
@@ -24,7 +27,12 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://mit-license.org"
+      "url": "http://testdouble.mit-license.org"
     }
+  ],
+  "keywords": [
+    "lineman",
+    "linemanplugin",
+    "angular"
   ]
 }
