@@ -20,9 +20,12 @@
     "coffee-script": "~1.6.3",
     "underscore": "~1.5.2"
   },
-  "devDependencies": {},
   "peerDependencies": {
     "lineman": ">= 0.23.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-release": "^0.7.0"
   },
   "licenses": [
     {
