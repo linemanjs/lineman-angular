@@ -9,7 +9,7 @@ as a starting point.
 
 This plugin will configure your lineman project to incorporate:
 
- * **grunt-ngmin** to handle minification, replacing uglify, in order to deal with Angular's fucntion#toString()'ing to figure out what to inject into your methods.
+ * **grunt-ngmin** to handle minification, replacing uglify, in order to deal with Angular's function#toString()'ing to figure out what to inject into your methods.
  * **grunt-angular-templates** to compile the client-side `*.html` templates you add to `app/templates`
 
 ## Notes
