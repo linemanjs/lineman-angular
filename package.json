@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "grunt-angular-templates": "~0.3.8",
-    "grunt-ngmin": "~0.0.3",
+    "grunt-ng-annotate": "~0.3.0",
     "coffee-script": "~1.6.3",
     "underscore": "~1.5.2"
   },
