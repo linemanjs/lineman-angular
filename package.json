@@ -15,10 +15,10 @@
     "url": "https://github.com/linemanjs/lineman-angular/issues"
   },
   "dependencies": {
-    "grunt-angular-templates": "~0.3.8",
-    "grunt-ngmin": "~0.0.3",
-    "coffee-script": "~1.6.3",
-    "underscore": "~1.5.2"
+    "grunt-angular-templates": "^0.3.8",
+    "grunt-ng-annotate": "^0.3.2",
+    "coffee-script": "^1.6.3",
+    "underscore": "^1.5.2"
   },
   "peerDependencies": {
     "lineman": ">= 0.23.0"
