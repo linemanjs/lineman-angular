@@ -23,4 +23,10 @@ This plugin will configure your lineman project to incorporate:
  * **Tasks** to manage NG2 files.
  * **Workflow** to execute NG2 build / run tasks.
  * **Watch** to watch NG2 files and trigger NG2 tasks.
+ 
+## Assumptions
+This plugin assumes:
+
+ * That your Angular 2 files will be placed in the app/ng2 folder. The Angular 2 tutorials use app and app/ts for the host folder for Angular 1 / Angular 2 hybrid applications, and app as the host folder for pure Angular 2 applications. This plugin has been written to support Angular 1 / Angular 2 hybrid applications. Some time the future this plugin will be re-factored to support pure Angular 2 applications.
+
 
