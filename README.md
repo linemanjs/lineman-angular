@@ -1,12 +1,10 @@
 # lineman-angular2
 
 ## Introduction
-This is a plugin to get started with Angular.js using
-[Lineman](http://linemanjs.com). We recommend you look at a
-[Angular 2 template project](https://github.com/RodrigoMattosoSilveira/lineman-angular2-template/)
-as a starting point.
+This is a plugin to get started with Angular.js using [Lineman](http://linemanjs.com). This plugin enhances the original  [lineman-angular](https://github.com/linemanjs/lineman-angular) plugin to support [Angular 2](https://angular.io/). Using this plugin you can build pure Angular 1, hybrid [Angular 1](https://angularjs.org/)/ [Angular 2](https://angular.io/), and pure [Angular 2](https://angular.io/) applications.
 
-This plugin enhances the original  [lineman-angular](https://github.com/linemanjs/lineman-angular) plugin to support [Angular 2](https://angular.io/). Using this plugin you can build pure Angular 1, hybrid [Angular 1](https://angularjs.org/)/ [Angular 2](https://angular.io/), and pure [Angular 2](https://angular.io/) applications.
+We recommend you look at a [Angular 2 template project](https://github.com/RodrigoMattosoSilveira/lineman-angular2-template/)  as a starting point.
+
 
 [Angular 2](https://angular.io/) is quite different from [Angular 2](https://angular.io/), with some of these differences having a direct impact on how hybrid Angular 1/ Angular 2, and pure Angular 2 applications are built:
 
@@ -18,8 +16,9 @@ This plugin enhances the original  [lineman-angular](https://github.com/linemanj
 
 This plugin will configure your lineman project to incorporate:
 
- * **grunt-ts** to compile Typescript (ts)files
- * **Tasks** to manage NG2 files
- * **Workflow** to execute NG2 build / run tasks
- * **Watch** to watch NG2 files and trigger NG2 tasks
+ * **files** definitions to support NG2 specific task management.
+ * **grunt-ts** to compile Typescript (ts)files.
+ * **Tasks** to manage NG2 files.
+ * **Workflow** to execute NG2 build / run tasks.
+ * **Watch** to watch NG2 files and trigger NG2 tasks.
 
