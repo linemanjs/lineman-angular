@@ -1,7 +1,7 @@
 {
   "name": "lineman-angular2",
   "description": "A Lineman plugin for Angular 2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/RodrigoMattosoSilveira/lineman-angular2/wiki",
   "author": {
     "name": "Rodrigo Silveira",
