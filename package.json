@@ -2,26 +2,26 @@
   "name": "lineman-angular2",
   "description": "A Lineman plugin for Angular 2",
   "version": "0.0.1",
-  "homepage": "https://github.com/linemanjs/lineman-angular",
+  "homepage": "https://github.com/RodrigoMattosoSilveira/lineman-angular2/wiki",
   "author": {
     "name": "Rodrigo Silveira",
     "email": "rodrigomattososilveira@gmail.com  "
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/linemanjs/lineman-angular.git"
+    "url": "https://github.com/RodrigoMattosoSilveira/lineman-angular2.git"
   },
   "bugs": {
-    "url": "https://github.com/linemanjs/lineman-angular/issues"
+    "url": "https://github.com/RodrigoMattosoSilveira/lineman-angular2/issues"
   },
   "dependencies": {
     "grunt-ts": "^5.5.1"
   },
   "peerDependencies": {
-    "lineman": ">=0.36.6"
+    "lineman": "^0.36.6"
   },
   "devDependencies": {
-    "grunt": ">=0.4.4",
+    "grunt": "^0.4.4",
     "grunt-release": "^0.7.0",
     "grunt-ts": "^5.5.1"
   },
