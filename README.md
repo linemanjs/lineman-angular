@@ -28,5 +28,8 @@ This plugin will configure your lineman project to incorporate:
 This plugin assumes:
 
  * That your Angular 2 files will be placed in the app/ng2 folder. The Angular 2 tutorials use app and app/ts for the host folder for Angular 1 / Angular 2 hybrid applications, and app as the host folder for pure Angular 2 applications. This plugin has been written to support Angular 1 / Angular 2 hybrid applications. Some time the future this plugin will be re-factored to support pure Angular 2 applications.
+ 
+## Sample application
+See the [lineman-angular2-template project](https://github.com/RodrigoMattosoSilveira/lineman-angular2-template) for a sample application of this plugin. 
 
 
