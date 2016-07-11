@@ -15,15 +15,16 @@
     "url": "https://github.com/RodrigoMattosoSilveira/lineman-angular2/issues"
   },
   "dependencies": {
-    "grunt-ts": "^5.5.1"
+    "grunt-ts": "^5.5.1",
+    "typings": "^1.0.4",
+    "grunt-contrib-copy": "^1.0.0"
   },
   "peerDependencies": {
     "lineman": "^0.36.6"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
-    "grunt-release": "^0.7.0",
-    "grunt-ts": "^5.5.1"
+    "grunt-release": "^0.7.0"
   },
   "licenses": [
     {
