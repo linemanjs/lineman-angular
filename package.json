@@ -20,7 +20,8 @@
     "grunt-contrib-copy": "^1.0.0"
   },
   "peerDependencies": {
-    "lineman": "^0.36.6"
+    "lineman": "^0.36.6",
+    "lineman-angular": "0.3.0"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
@@ -35,7 +36,6 @@
   "keywords": [
     "lineman",
     "angular",
-    "angular1",
     "angular2"
   ]
 }
