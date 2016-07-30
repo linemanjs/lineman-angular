@@ -43,57 +43,66 @@ module.exports = function(lineman) {
              * Task Configuration
              */
             copy: {
-                ng2_css_generated: {
+                "ng2-libs-to-target": {
+                    files: [
+                        {expand: true, src: "<%= files.ng2.libs %>", dest: "../../../target/iq/" }
+                    ]
+                },
+                "ng2-css-files-to-generated": {
                     // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
                     // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
                     expand: true,
                     cwd: "app/ng2",
                     src: "<%= files.ng2.css %>",
                     dest: "<%= files.ng2.generated %>"
-                },
-                 ng2_html_generated: {
-                     // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
-                     // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
-                     expand: true,
-                     cwd: "app/ng2",
-                     src: "<%= files.ng2.html %>",
-                     dest: "<%= files.ng2.generated %>"
                  },
-                ng2_libs_generated: {
-                    files: [
-                        {expand: true, src: "<%= files.ng2.libs %>", dest: "generated/" }
-                    ]
-                },
-                ng2_other_generated: {
-                   // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
+                "ng2-files-to-generated": {
+                    // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
                     // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
                     expand: true,
                     cwd: "app/ng2",
-                    src: ["<%= files.ng2.css %>", "<%= files.ng2.html %>"], //todo consolidate
+                    src: ["<%= files.ng2.css %>", "<%= files.ng2.html %>", "<%= files.ng2.ts %>"],
                     dest: "<%= files.ng2.generated %>"
                 },
-                ng2_libs_dist: {
-                    files: [
-                        {expand: true, src: "<%= files.ng2.libs %>", dest: "dist/" }
-                    ]
-                },
-                ng2_other_dist: {
-                   // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
+                "ng2-html-files-to-generated": {
+                    // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
                     // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
                     expand: true,
                     cwd: "app/ng2",
-                    src: ["<%= files.ng2.css %>", "<%= files.ng2.html %>"], //todo consolidate
+                    src: "<%= files.ng2.html %>",
+                    dest: "<%= files.ng2.generated %>"
+                },
+                "ng2-ts-files-to-generated": {
+                    // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
+                    // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
+                    expand: true,
+                    cwd: "app/ng2",
+                    src: "<%= files.ng2.ts %>",
+                    dest: "<%= files.ng2.generated %>"
+                },
+                "ng2-files-to-dist": {
+                    // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
+                    // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
+                    expand: true,
+                    cwd: "app/ng2",
+                    src: ["<%= files.ng2.css %>", "<%= files.ng2.html %>"],
                     dest: "<%= files.ng2.dist %>"
                 },
-                systemjs_dist: {
+                // Copies the angular 2 libraries to the dist folder.
+                // Executed by the "lineman build" command
+                "ng2-libs-to-dist": {
+                    files: [
+                        {expand: true, src: "<%= files.ng2.libs %>", dest: "dist/"}
+                    ]
+                },
+                "systemjs-to-dist": {
                     src: "systemjs.config.js",
                     dest: "<%= files.ng2.systemjs.dist %>"
                 },
-                systemjs_generated: {
+                "systemjs-to-generated": {
                     src: "systemjs.config.js",
                     dest: "<%= files.ng2.systemjs.generated %>"
-                }
-            },
+}            },
 
             // Added this to fix the following error:
             // Warning: Path must be a string. Received null Use --force to continue.
@@ -160,7 +169,7 @@ module.exports = function(lineman) {
                     // renamed & deleted files remain in place, restarting lineman run will fix it
                     ng2_ts: {
                         "files": "<%= files.ng2.ts %>",
-                        "tasks": ["ts:development"]
+                        "tasks": ["ts:development", "copy:ng2-ts-files-to-generated"]
                     }
             },
 
