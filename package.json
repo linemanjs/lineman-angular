@@ -1,27 +1,27 @@
 {
-  "name": "lineman-angular",
-  "description": "An Angular.js plugin for Lineman",
-  "version": "0.3.0",
-  "homepage": "https://github.com/linemanjs/lineman-angular",
+  "name": "lineman-angular2",
+  "description": "A Lineman plugin for Angular 2",
+  "version": "0.0.2",
+  "homepage": "https://github.com/RodrigoMattosoSilveira/lineman-angular2/wiki",
   "author": {
-    "name": "Justin Searls",
-    "email": "justin@testdouble.com"
+    "name": "Rodrigo Silveira",
+    "email": "rodrigomattososilveira@gmail.com  "
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/linemanjs/lineman-angular.git"
+    "url": "https://github.com/RodrigoMattosoSilveira/lineman-angular2.git"
   },
   "bugs": {
-    "url": "https://github.com/linemanjs/lineman-angular/issues"
+    "url": "https://github.com/RodrigoMattosoSilveira/lineman-angular2/issues"
   },
   "dependencies": {
-    "grunt-angular-templates": "^0.3.8",
-    "grunt-ng-annotate": "^0.3.2",
-    "coffee-script": "^1.6.3",
-    "underscore": "^1.5.2"
+    "grunt-ts": "^5.5.1",
+    "typings": "^1.0.4",
+    "grunt-contrib-copy": "^1.0.0"
   },
   "peerDependencies": {
-    "lineman": ">= 0.23.0"
+    "lineman": "^0.36.6",
+    "lineman-angular": "0.3.0"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
@@ -30,12 +30,12 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://testdouble.mit-license.org"
+      "url": "https://opensource.org/licenses/MIT"
     }
   ],
   "keywords": [
     "lineman",
-    "linemanplugin",
-    "angular"
+    "angular",
+    "angular2"
   ]
 }
