@@ -1,3 +1,5 @@
 /node_modules
 
 .DS_Store
+.idea
+lineman-angular2.iml
