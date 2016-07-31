@@ -43,10 +43,16 @@ module.exports = function(lineman) {
              * Task Configuration
              */
             copy: {
-                "ng2-libs-to-target": {
-                    files: [
-                        {expand: true, src: "<%= files.ng2.libs %>", dest: "../../../target/iq/" }
-                    ]
+                // ****************
+                // generated folder
+                // ****************
+                "ng2-all-files-to-generated": {
+                    // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
+                    // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
+                    expand: true,
+                    cwd: "app/ng2",
+                    src: ["<%= files.ng2.css %>", "<%= files.ng2.html %>", "<%= files.ng2.ts %>"],
+                    dest: "<%= files.ng2.generated %>"
                 },
                 "ng2-css-files-to-generated": {
                     // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
@@ -54,14 +60,6 @@ module.exports = function(lineman) {
                     expand: true,
                     cwd: "app/ng2",
                     src: "<%= files.ng2.css %>",
-                    dest: "<%= files.ng2.generated %>"
-                 },
-                "ng2-files-to-generated": {
-                    // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
-                    // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
-                    expand: true,
-                    cwd: "app/ng2",
-                    src: ["<%= files.ng2.css %>", "<%= files.ng2.html %>", "<%= files.ng2.ts %>"],
                     dest: "<%= files.ng2.generated %>"
                 },
                 "ng2-html-files-to-generated": {
@@ -72,6 +70,11 @@ module.exports = function(lineman) {
                     src: "<%= files.ng2.html %>",
                     dest: "<%= files.ng2.generated %>"
                 },
+                "ng2-libs-to-generated": {
+                    files: [
+                        {expand: true, src: "<%= files.ng2.libs %>", dest: "generated/"}
+                    ]
+                },
                 "ng2-ts-files-to-generated": {
                     // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
                     // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
@@ -80,7 +83,24 @@ module.exports = function(lineman) {
                     src: "<%= files.ng2.ts %>",
                     dest: "<%= files.ng2.generated %>"
                 },
-                "ng2-files-to-dist": {
+                "ng2-ts-files-to-generated": {
+                    // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
+                    // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
+                    expand: true,
+                    cwd: "app/ng2",
+                    src: "<%= files.ng2.ts %>",
+                    dest: "<%= files.ng2.generated %>"
+                },
+                // Copies the angular 2 libraries to the dist folder.
+                // Executed by the "lineman build" command
+                "systemjs-to-generated": {
+                    src: "systemjs.config.js",
+                    dest: "<%= files.ng2.systemjs.generated %>"
+                },
+                // ****************
+                // dist folder
+                // ****************
+                "ng2-all-files-to-dist": {
                     // See Copy files to different directory (https://github.com/gruntjs/grunt-contrib-copy/issues/58)
                     // I used to ensure that the compiled ts files (js / map) and their companions (ts / html / css) landed on the same folder
                     expand: true,
@@ -88,8 +108,6 @@ module.exports = function(lineman) {
                     src: ["<%= files.ng2.css %>", "<%= files.ng2.html %>"],
                     dest: "<%= files.ng2.dist %>"
                 },
-                // Copies the angular 2 libraries to the dist folder.
-                // Executed by the "lineman build" command
                 "ng2-libs-to-dist": {
                     files: [
                         {expand: true, src: "<%= files.ng2.libs %>", dest: "dist/"}
@@ -99,10 +117,7 @@ module.exports = function(lineman) {
                     src: "systemjs.config.js",
                     dest: "<%= files.ng2.systemjs.dist %>"
                 },
-                "systemjs-to-generated": {
-                    src: "systemjs.config.js",
-                    dest: "<%= files.ng2.systemjs.generated %>"
-}            },
+            },
 
             // Added this to fix the following error:
             // Warning: Path must be a string. Received null Use --force to continue.
@@ -149,37 +164,37 @@ module.exports = function(lineman) {
             },
 
             /*
-            * Watch configuration
-            */
+             * Watch configuration
+             */
             watch: {
-                   ng2_systemjs: {
-                        "files": "systemjs.config.js",
-                        "tasks": ["copy:systemjs_generated"]
-                    },
-                    // renamed & deleted files remain in place, restarting lineman run will fix it
-                    ng2_css: {
-                        "files": "<%= files.ng2.css %>",
-                        "tasks": ["copy:ng2_css_generated"]
-                    },
-                    // renamed & deleted files remain in place, restarting lineman run will fix it
-                    ng2_html: {
-                        "files": "<%= files.ng2.html %>",
-                        "tasks": ["copy:ng2_html_generated"]
-                    },
-                    // renamed & deleted files remain in place, restarting lineman run will fix it
-                    ng2_ts: {
-                        "files": "<%= files.ng2.ts %>",
-                        "tasks": ["ts:development", "copy:ng2-ts-files-to-generated"]
-                    }
+                ng2_systemjs: {
+                    "files": "systemjs.config.js",
+                    "tasks": ["copy:systemjs-to-generated"]
+                },
+                // renamed & deleted files remain in place, restarting lineman run will fix it
+                ng2_css: {
+                    "files": "<%= files.ng2.css %>",
+                    "tasks": ["copy:ng2-css-files-to-generated"]
+                },
+                // renamed & deleted files remain in place, restarting lineman run will fix it
+                ng2_html: {
+                    "files": "<%= files.ng2.html %>",
+                    "tasks": ["copy:ng2-html-files-to-generated"]
+                },
+                // renamed & deleted files remain in place, restarting lineman run will fix it
+                ng2_ts: {
+                    "files": "<%= files.ng2.ts %>",
+                    "tasks": ["ts:development", "copy:ng2-ts-files-to-generated"]
+                }
             },
 
             /*
-            * Workflow configuration
-            */
+             * Workflow configuration
+             */
             prependTasks: {
                 common: lineman.config.application.prependTasks.common.concat(["ts:development"]),
-                dev: ["copy:ng2_other_generated", "copy:ng2_libs_generated"].concat(lineman.config.application.prependTasks.dev),
-                dist: ["copy:ng2_other_dist", "copy:ng2_libs_dist"].concat(lineman.config.application.prependTasks.dev)
+                dev: ["copy:ng2-all-files-to-generated", "copy:ng2-libs-to-generated"].concat(lineman.config.application.prependTasks.dev),
+                dist: ["copy:ng2-all-files-to-dist", "copy:ng2-libs-to-dist"].concat(lineman.config.application.prependTasks.dev)
             }
         }
     };
